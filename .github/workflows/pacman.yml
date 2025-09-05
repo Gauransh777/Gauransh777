@@ -2,7 +2,7 @@ name: Generate pacman animation
 
 on:
   schedule:
-    - cron: "0 */12 * * *"     # every 12 hours
+    - cron: "0 */12 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -42,7 +42,8 @@ jobs:
         with:
           message: "chore: update pacman svg"
           add: 'dist/*'
-          branch: output
+          new_branch: output
+          push: true
           author_name: github-actions[bot]
           author_email: github-actions[bot]@users.noreply.github.com
         env:
